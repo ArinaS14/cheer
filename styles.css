@@ -1,0 +1,1064 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #52046A;
+    --secondary-color: #FCC100;
+    --text-dark: #1A1A1A;
+    --text-light: #666666;
+    --bg-light: #FFFFFF;
+    --bg-gray: #F5F5F5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Главный экран */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background: rgba(82, 4, 106, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.hero-content h2 {
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    letter-spacing: -2px;
+}
+
+.hero-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.hero-date,
+.hero-location {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Секции */
+section {
+    padding: 100px 0;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+.section-description {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* О сборах */
+.about-section {
+    background: var(--bg-light);
+}
+
+.text-block {
+    max-width: 900px;
+    margin-bottom: 60px;
+}
+
+.text-block h2 {
+    margin-bottom: 20px;
+}
+
+.text-block p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.info-item {
+    padding: 40px 30px;
+    background: var(--bg-gray);
+    border-radius: 10px;
+}
+
+.info-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.info-item p {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Программа дня */
+.schedule-section {
+    background: var(--bg-gray);
+    text-align: center;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.schedule-card {
+    background: var(--bg-light);
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(82, 4, 106, 0.15);
+}
+
+.schedule-card.highlight {
+    background: linear-gradient(135deg, var(--primary-color), #6a0d82);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.schedule-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.schedule-time {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.schedule-card.highlight .schedule-time {
+    color: var(--secondary-color);
+}
+
+.schedule-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.schedule-card.highlight .schedule-title {
+    color: white;
+}
+
+.schedule-desc {
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+.schedule-card.highlight .schedule-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.activities-highlights {
+    margin-top: 80px;
+    padding: 60px;
+    background: var(--bg-light);
+    border-radius: 20px;
+}
+
+.activities-highlights h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: var(--bg-gray);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateX(5px);
+    background: linear-gradient(135deg, var(--primary-color), #6a0d82);
+    color: white;
+}
+
+.highlight-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.highlight-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Программа */
+.program-section {
+    background: var(--bg-light);
+}
+
+.program-grid {
+    display: grid;
+    gap: 80px;
+    margin-top: 60px;
+}
+
+.program-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.program-item.reverse {
+    direction: rtl;
+}
+
+.program-item.reverse .program-text {
+    direction: ltr;
+}
+
+.program-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-text h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.program-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Проживание */
+.accommodation-section {
+    background: var(--bg-gray);
+    text-align: center;
+}
+
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.accommodation-item {
+    background: var(--bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accommodation-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.accommodation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.accommodation-item:hover .accommodation-image img {
+    transform: scale(1.05);
+}
+
+.accommodation-desc {
+    padding: 30px;
+    text-align: left;
+}
+
+.accommodation-desc h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.accommodation-desc p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Питание */
+.food-section {
+    background: var(--bg-light);
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+}
+
+.split-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.split-content {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-gray);
+}
+
+.split-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.split-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.split-content ul {
+    list-style: none;
+}
+
+.split-content li {
+    font-size: 16px;
+    padding: 12px 0;
+    color: var(--text-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Локация */
+.location-section {
+    background: var(--bg-gray);
+    text-align: center;
+}
+
+.location-subtitle {
+    font-size: 20px;
+    color: var(--text-light);
+    margin-bottom: 60px;
+}
+
+.location-images {
+    margin-top: 60px;
+}
+
+.location-main-image {
+    width: 100%;
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.location-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Видео карусель */
+.video-section {
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.video-carousel {
+    margin-top: 60px;
+    position: relative;
+}
+
+.videoSwiper {
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.videoSwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 900px;
+    background: var(--bg-gray);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.videoSwiper video {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.swiper-pagination {
+    bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--primary-color);
+    width: 12px;
+    height: 12px;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--secondary-color);
+    opacity: 1;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* Команда */
+.team-section {
+    background: var(--bg-gray);
+    text-align: center;
+}
+
+.team-subtitle {
+    font-size: 20px;
+    color: var(--text-light);
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.team-item {
+    padding: 50px 40px;
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.team-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.team-item p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Контакты и стоимость */
+.contact-section {
+    background: var(--bg-light);
+}
+
+.contact-section .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.price-block,
+.contact-block {
+    padding: 60px;
+    background: var(--bg-gray);
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin: 30px 0;
+}
+
+.price-note {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.price-includes p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.price-includes ul {
+    list-style: none;
+}
+
+.price-includes li {
+    font-size: 16px;
+    padding: 12px 0;
+    color: var(--text-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    margin-top: 40px;
+}
+
+.contact-item {
+    margin-bottom: 40px;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.contact-value:hover {
+    color: var(--primary-color);
+}
+
+/* Футер */
+.footer {
+    background: var(--text-dark);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Модальное окно для изображений */
+.image-clickable {
+    cursor: pointer;
+    position: relative;
+}
+
+.image-clickable::after {
+    content: '🔍';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-clickable:hover::after {
+    opacity: 1;
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10000;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .program-item,
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .program-item.reverse {
+        direction: ltr;
+    }
+
+    .accommodation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .schedule-card {
+        padding: 20px 12px;
+    }
+
+    .schedule-icon {
+        font-size: 32px;
+    }
+
+    .schedule-time {
+        font-size: 11px;
+    }
+
+    .schedule-title {
+        font-size: 14px;
+    }
+
+    .schedule-desc {
+        font-size: 12px;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 40px;
+        gap: 20px;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        background: var(--bg-gray);
+    }
+
+    .nav-links a:hover {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content h2 {
+        font-size: 42px;
+    }
+
+    .hero-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .schedule-card {
+        padding: 25px 15px;
+    }
+
+    .schedule-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .schedule-time {
+        font-size: 12px;
+    }
+
+    .schedule-title {
+        font-size: 16px;
+    }
+
+    .schedule-desc {
+        font-size: 13px;
+    }
+
+    .activities-highlights {
+        padding: 30px 20px;
+    }
+
+    .activities-highlights h3 {
+        font-size: 28px;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .highlight-item {
+        padding: 20px;
+    }
+
+    .highlight-icon {
+        font-size: 28px;
+    }
+
+    .highlight-text {
+        font-size: 14px;
+    }
+
+    .program-image,
+    .location-main-image {
+        height: 300px;
+    }
+
+    .accommodation-image {
+        height: 250px;
+    }
+
+    .split-content {
+        padding: 40px 30px;
+    }
+
+    .price {
+        font-size: 48px;
+    }
+
+    .content-wrapper {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
